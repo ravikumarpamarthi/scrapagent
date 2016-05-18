@@ -1,0 +1,38 @@
+<ion-view view-title="Sell Items Confirmation" hide-nav-bar="false" align-title="left" hide-back-button="true" cache-view="false" id="updateSellItemsPage">
+    <ion-content has-bouncing="true" padding="true" class="has-header">
+        <div class="list" class="item-text-wrap">
+            <div class="item row">
+                <div class="col col-33 text-center">Category</div>
+                <div class="col col-20 text-center">Price</div>
+                <div class="col col-20 text-center">Qty(Kg)</div>
+                <div class="col col-20 text-center">Total(Rs)</div>
+            </div>
+            <div ng-repeat="item in sellDetails.items">
+                <div class="item row">
+                    <div class="col col-33">{{item.categoryName}}</div>
+                    <div class="col col-20 text-center">{{item.pricePerUnit}}</div>
+                    <div class="col col-20 text-center">{{item.quantity}}</div>
+                    <div class="col col-20 textRight">{{item.amount | number : 2}}</div>
+                </div>
+            </div>
+            <div class="item row">
+                <div class="col col-33"></div>
+                <div class="col col-10"></div>
+                <div class="col col-33 textRight">Total Amount</div>
+                <div class="col col-20 textRight">{{sellDetails.totalAmount | number : 2}}</div>
+            </div>
+           <div class="item row" style="margin-bottom: 52px;">
+           <div class="col col-33"></div>
+           <div class="col col-10"></div>
+                <div class="col col-33 textRight">Payment Mode</div>
+                <div class="col col-20 textRight">{{sellDetails.preferredPaymentMethod}}</div>
+            </div>
+
+        </div>
+    </ion-content>
+    <div class="tabs dashboardTabsStyle ">
+        <a class="tab-item" ng-click="complete()" style="font-size:16px;color:white;opacity:1;text-align:center;">
+                Ok
+            </a>
+    </div>
+</ion-view>

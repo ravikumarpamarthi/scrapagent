@@ -1,0 +1,35 @@
+<div class="modal">
+    <ion-header-bar class="bar-balanced" align-title="center">
+        <h1 class="title">Bid Details</h1>
+        <div class="buttons">
+            <button class="button icon ion-close button-clear" ng-click="bidCloseModal()"></button>
+        </div>
+    </ion-header-bar>
+  <ion-content has-bouncing="true" >
+        
+        <div class="paddingBottomZero" >
+            <div class="list padding">
+                <div class="item row paddingZero custom-margin10" ng-repeat="category in biddetails.categories">
+                    <div class="col col-33 col-center" style="font-size:13px;">
+                        <div style="margin-bottom:5px;">{{category.name}} </div>
+                    </div>
+                    <div class="col col-33 col-center" style="text-align:right;font-size:13px;">
+                        <div class="spin">Qunatity&nbsp;&nbsp;-&nbsp;&nbsp;
+                            <!-- <input value="{{category.quantity}}" style="width:35px;text-align:center;border:none;font-size:13px;" disabled/> -->
+                            20
+                        </div>
+                        <div class="spin">Bid Price&nbsp;&nbsp;-&nbsp;&nbsp;
+                            <!-- <input value="{{category.price}}" style="width:40px;text-align:center;border:none;font-size:13px;" disabled/> -->
+                            {{category.price}}/Kg
+                        </div>
+                    </div>
+                    <div class="col col-center textRight">
+                        <button class="button button-balanced button-small" style="padding-top:0px;padding-bottom:0px;">Accept</button> 
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </ion-content>
+</div>

@@ -1,0 +1,23 @@
+<ion-view  title="Category Selection" hide-nav-bar="false" align-title="left" hide-back-button="true" cache-view="false">
+	<ion-content padding="true" class="has-header" has-bouncing="false">
+		<form name="catSelectionForm"  novalidate>
+
+      <label class="checkbox-balanced item-icon-right item item-checkbox" ng-repeat="item in catList">
+      <div class="checkbox checkbox-input-hidden disable-pointer-events checkbox-circle">
+        <input type="checkbox" data-checklist-model="userCategories" data-checklist-value="item.consumerCategoryId">
+           <i class="checkbox-icon"></i>
+        </div>
+        <div class="item-content disable-pointer-events">
+        <span class="ng-binding">   {{item.name}}</span><i ng-class="item.icon" class="fa pull-right double-Icon"></i>
+
+      </div></label>
+      
+
+        <div class="padding">
+           <button type="submit" class="button button-block button-energized" ng-click="submitCatSelectionForm(userCategories)">PROCEED</button>
+
+        </div>
+		</form>
+
+	</ion-content>
+</ion-view>

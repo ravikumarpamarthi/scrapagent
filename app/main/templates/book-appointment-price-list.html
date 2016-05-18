@@ -1,0 +1,55 @@
+<ion-view view-title="Whole Saler Price List" id="bookAppointmentPriceListPage" hide-nav-bar="false" align-title="left" hide-back-button="true" cache-view="false">
+    <!-- do you want padding? -->
+    <ion-content>
+        <marquee scrollamount="3">
+            <span ng-repeat="category in categories" >{{category.name}}- {{category.price}} Rs/{{category.uom}}</span>
+        </marquee>
+        <div ng-repeat="category in categories" style="margin-top:-10px;" >
+            <div class="row" ng-if="$even">
+                <div class="col col-50 custom1 " ng-class="{shade:inShades($index+1)}">
+                    <div class="textCenter" style="color:#939393;">
+                        <span ng-bind="categories[$index].name"></span>
+                        <br/> <span>Rate/{{categories[$index].uom}} : {{categories[$index].price}}Rs</span>
+                    </div>
+                    <label ng-class="{shade:inShades($index+1)}" class="dashboard checkbox-balanced item item-checkbox checkboxStyle">
+                        <div class="checkbox checkbox-input-hidden disable-pointer-events checkbox-circle">
+                            <input type="checkbox" data-checklist-model="data[$index].items" data-checklist-value="categories[$index]">
+                            <i class="checkbox-icon"></i>
+                        </div>
+                        <div class="item-content disable-pointer-events">
+                            <img ng-src="{{categories[$index].image}}" width="150" height="120"/>
+                            <!-- <img ng-src="{{$root.getImageFileById}}/{{categories[$index].imageURL}}.jpg" width="150" height="120" /> -->
+                        </div>
+                    </label>
+                    <!-- <span class="spanCustomStyle">Qty</span>
+                    <input ng-init="data[$index].qty=1" class="rangeWidth" type="range" min="1" max="50" value="1" step="0" ng-model="data[$index].qty"><span class="spanCustomStyle">{{data[$index].qty || 1}}/50</span> -->
+                </div>
+                <div class="col col-50 custom1 " ng-if="categories[$index+1]" ng-class="{shade:inShades($index)}">
+                    <div class="textCenter" style="color:#939393;">
+                        <span ng-bind="categories[$index+1].name"></span>
+                        <br/><span>Rate/{{categories[$index+1].uom}} : {{categories[$index+1].price}}Rs</span>
+                    </div>
+                    <label ng-class="{shade:inShades($index)}" class="checkbox-balanced item dashboard item-checkbox checkboxStyle">
+                        <div class="checkbox checkbox-input-hidden disable-pointer-events checkbox-circle">
+                            <input type="checkbox" data-checklist-model="data[$index+1].items" data-checklist-value="categories[$index+1]">
+                            <i class="checkbox-icon"></i>
+                        </div>
+                        <div class="item-content disable-pointer-events">
+                            <img ng-src="{{categories[$index+1].image}}" width="150" height="120"/>
+                           <!--  <img ng-src="{{$root.getImageFileById}}/{{categories[$index+1].imageURL}}.jpg" width="150" height="120" /> -->
+                        </div>
+                    </label>
+                    <!-- <span class="spanCustomStyle">Qty</span>
+                    <input ng-init="data[$index+1].qty=1" class="rangeWidth" type="range" min="1" max="50" value="1" step="0" ng-model="data[$index+1].qty"><span class="spanCustomStyle">{{data[$index+1].qty || 1}}/50</span> -->
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <div class="tabs dashboardTabsStyle" >
+        
+        <a class="tab-item item-text-wrap" ng-click="bookAppiontment()" style="font-size:16px;color:white;">
+            Book Appointment
+        </a>
+        
+    </div>
+</ion-view>

@@ -1,0 +1,64 @@
+<ion-view hide-nav-bar="false"  cache-view="false" hide-back-button="true" title="Inventory">
+<!-- <ion-view view-title="Inventory" hide-nav-bar="false" align-title="left" hide-back-button="true" cache-view="false" id="viewInventory"> -->
+    <ion-content has-bouncing="false" padding="true" class="has-header">
+        <div class="list" class="item-text-wrap">
+            <div class="item row">
+                <div class="col col-33 col-center">Category</div>
+                <div class="col col-67">
+                    <div class="row">
+                        <div class="col col-33 text-right">Price</div>
+                        <div class="col col-33 ">Qty(Kg)</div>
+                        <div class="col col-33 ">Total(Rs)</div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div ng-repeat="item in sellDetails.items"> -->
+            <div>
+                <div class="item row">
+                    <div class="col col-33 col-center">E-WASTE{{item.categoryName}}</div>
+                    <div class="col col-67">
+                        <div class="row">
+                            <div class="col col-33 text-right">9.50{{item.pricePerUnit}}</div>
+                            <div class="col col-33 text-right">1.00{{item.quantity}}</div>
+                            <div class="col col-33 text-right">9.50{{item.amount | number : 2}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item row">
+                    <div class="col col-33 col-center">IRON{{item.categoryName}}</div>
+                    <div class="col col-67">
+                        <div class="row">
+                            <div class="col col-33 text-right">9.50{{item.pricePerUnit}}</div>
+                            <div class="col col-33 text-right">1.00{{item.quantity}}</div>
+                            <div class="col col-33 text-right">9.50{{item.amount | number : 2}}</div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="item row">
+                <div class="col col-33"></div>
+                <div class="col col-67">
+                    <div class="row">
+                        <div class="col col-67 textRight">Total Amount</div>
+                        <div class="col col-33 text-right">19.00{{sellDetails.totalAmount | number : 2}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item row" style="margin-bottom: 52px;">
+                <div class="col col-33"></div>
+                <div class="col col-67">
+                    <div class="row">
+                        <div class="col col-67 text-right">Payment Mode</div>
+                        <div class="col col-2330 text-right">Cash{{sellDetails.preferredPaymentMethod}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <div class="tabs dashboardTabsStyle ">
+        <a class="tab-item" ng-click="complete()" style="font-size:16px;color:white;opacity:1;text-align:center;">
+                Ok
+            </a>
+    </div>
+</ion-view>

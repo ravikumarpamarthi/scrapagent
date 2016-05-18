@@ -1,0 +1,31 @@
+<ion-view hide-nav-bar="false"  cache-view="false" hide-back-button="true" title="Bids">
+<!-- <ion-view hide-nav-bar="false" view-title="Bids" hide-back-button="true" cache-view="false"> -->
+    <ion-content class="has-header" has-bouncing="false">
+        <ion-list>
+        <div class="row">
+                            <div class="col col-50" >Category</div>
+                            <div class="col col-20">Qty</div>
+                            <div class="col col-20" >Amt</div>
+                            <div class="col col-10"><i class="fa fa-check-o"></i></div>
+                        </div>
+
+                        <div class="row" ng-if="bids.length==0">
+                            <div class="col text-center"> No Open Bids Available </div>
+                        </div>
+            <ion-item ng-repeat="item in bids">
+                <div>
+                        <div class="row" style="color:#33cd5f">
+                            <div class="col col-50" ng-bind="item.categoryName"></div>
+                            <div class="col col-20" ng-bind-template="{{item.quantity}}/Kg"></div>
+                            <div class="col col-20" ng-bind-template="Rs. {{item.bidPrice}}"></div>
+                            <div class="col col-10" ng-click="acceptBid(item,$index)"><i class="ion-checkmark-circled"></i></div>
+                        </div>
+                        <div class="row" style="white-space: normal;font-size: 13px;">
+                            <div class="col col-90" ng-bind="item.consumerAddress.formattedAddress"></div>
+                            
+                        </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,918 @@
+.title-image{
+//  width: 75%;
+//  width: 60%;
+  height: 60%;
+  margin-top: 12px;
+}
+sup{
+  top:-1.5em;
+}
+.title-image-nav{
+  width: 30% !important;
+  margin-top: 12px;
+}
+i.double-Icon{
+  font-size:200%;
+  margin-right: 20px;
+}
+
+small{
+	font-size:10px;
+}
+
+#menu-content-id a.item-content{
+  padding-top:5px;padding-bottom:5px;
+
+}
+
+
+/*********************
+   Utility Styles
+   **********************/
+
+.siteColor{
+  color:#33CD5F;
+}
+
+  .flRight{
+    float:right;
+  }
+  .textCenter{
+    text-align:center;
+  }
+
+  .textRight{
+    text-align:right;
+  }
+  .textLeft{
+    text-align:left;
+  }
+
+  .errorDiv{
+    text-align:center;
+    color:red;
+    margin-top:5px;
+    margin-bottom:5px;
+  }
+
+  i.fontSizeDouble{
+    font-size:200%;
+  }
+
+  i.fontSizeOneFifty{
+    font-size:150%;
+  }
+
+  .tabRow{
+    margin-top:-10px;padding:0px;
+  }
+  .tabCol{
+    padding:0px;margin:0px;
+  }
+
+  .tabButtonStyle{
+    border:none;border-radius:0;min-height:42px;font-size:14px;
+  }
+
+  .tabContent{
+    cursor:pointer;border-bottom:10px solid #F2F2F2;padding-top:0px;padding-bottom:0px;
+  }
+
+  .tabContent .appointmentDate{
+    font-size:20px;margin-bottom:5px;
+  }
+
+  .tabContent .paddingTop{
+    padding-top:0px;
+  }
+
+  .tabContent .appointmentAddress{
+    font-size:12px;padding-top:0px;
+  }
+
+  select.locationSelectStyle{
+    padding:5px;direction:ltr;
+  }
+
+  .paddingZero{
+    padding:0px;
+  }
+
+  .hidden{
+    display:none;
+  }
+
+
+  #updateScrapPage div span.positionStyle{
+  	position:relative;top:-4px;
+  }
+  #updateScrapPage .ionContentBackground{
+  	background-color:#F2F2F2;
+  }
+
+  #updateScrapPage .marginBottom10{
+  	margin-bottom:10px;
+  }
+
+  #updateScrapPage marquee span, #agentDashboardPage marquee span, #updateSellItemsPage marquee span{
+  	margin-right:20px;
+  }
+
+  #updateScrapPage marquee, #agentDashboardPage marquee, #updateSellItemsPage marquee{
+  	height: 30px;
+    padding: 5px;
+    background-color: green;
+    color: white;
+  }
+
+ #pendingAmountPage p.textCenter.marginAdjust{
+ 	margin-left:35px;
+ }
+
+ .shade{
+  background-color:#F2F2F2;
+}
+
+#pendingAmountPage .item-left-editable .item-content, .item-right-editable .item-content{
+	padding:5px;
+}
+
+#contactCallCenterPage .callText{
+	text-transform:uppercase;margin-top:30px;
+}
+
+#contactCallCenterPage h5{
+	padding:15px 10px;
+}
+
+
+#appointmentListPage .marginBottom10{
+  	margin-bottom:10px;
+  }
+
+#appointmentListPage .iconPosition{
+	position:absolute;top:5px;right:5px;font-size:25px;
+}
+#appointmentListPage .iconPosition i {
+    margin-right: 21px;
+}
+
+#appointmentListPage span.fontSize10{
+	font-size:10px;
+}
+
+#appointmentListPage .ellipsisStyle{
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+
+.colorGray{
+  color:#939393;
+}
+
+#bookAppointmentPage .item{
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+#bookAppointmentPriceListPage marquee{
+    height: 30px;
+    padding: 5px;
+    background-color: green;
+    color: white;
+}
+
+
+.custom1 .item-checkbox{
+padding-left:0px;
+padding:2px;
+margin-bottom:6px;
+
+}
+.shade{
+  background-color:#F2F2F2;
+}
+
+.checkboxStyle{
+    border:none;text-align:center;
+  }
+
+.dashboardTabsStyle{
+    /*background-color: #33CD5F;
+    color: #fff;*/
+    background-color:#549FD6;
+    color:#fff;
+    font-weight:bold;
+}
+
+
+.tabRow{
+    margin-top:-10px;padding:0px;
+  }
+  .tabCol{
+    padding:0px;margin:0px;
+  }
+
+  .tabButtonStyle{
+    border:none;border-radius:0;min-height:42px;font-size:14px;
+    background-color:white;
+    padding-bottom: 12px;
+  }
+
+  .tabContent{
+    cursor:pointer;border-bottom:10px solid #F2F2F2;padding-top:0px;padding-bottom:0px;
+  } 
+  
+  .button.button-custom{
+    background-color:#DBD8D8;
+    background-color:white;
+    color:black;
+  }
+
+  .button.button-light-custom{
+    background-color:#F2F2F2;
+    color:black;
+  } 
+
+  .mh-slide {
+  -webkit-transform: translate3d(0, 0, 0) scale(0);
+  transform: translate3d(0, 0, 0) scale(0);
+  opacity: 0
+/*    transform: rotate(0deg) scale(0.761) skew(1deg) translate(0px);*/
+}
+
+.mh-slide.ng-enter, .mh-slide > .ng-enter {
+  -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+  transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms; }
+
+.mh-slide.ng-enter-active, .mh-slide > .ng-enter-active {
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
+  opacity: 1;
+}
+
+.spanCustomStyle{
+    position:relative;top:-6px;
+  }
+
+  .rangeWidth{
+    width:57%;
+  }
+
+  .map-parent{
+  position:relative;
+}
+
+.map-parent .map-child-target{
+  position:absolute;bottom:10%;right:2%;
+  height:31px;
+  width:31px;
+  background-color:white;margin-right:10px;bottom:5%;border-radius:17px;padding-bottom:0px;-webkit-box-shadow: 4px 4px 25px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 4px 4px 25px -6px rgba(0,0,0,0.75);
+box-shadow: 4px 4px 25px -6px rgba(0,0,0,0.75);
+}
+
+.map-parent .map-child-target i.custom-target-icon{
+  font-size:23px;color:gray;
+  position:absolute;
+  top:4px;
+}
+
+
+/* Custom Styles */
+.error-container {
+  margin: 5px 0;
+}
+
+.error-container:last-child {
+    margin: 5px 0 0;
+}
+
+.error {
+  padding: 10px 16px;
+  font-size: 14px;
+  color: red;
+  vertical-align: middle;
+}
+
+.error i {
+  font-size: 24px;
+  color: #B83E2C;
+  vertical-align: middle;
+}
+
+.last-error-container > .error {
+  padding: 10px 16px 0;
+}
+
+.has-errors {
+  border-bottom: 2px solid #B83E2C;
+}
+
+.no-errors {
+  border-bottom: 2px solid green;
+}
+
+i.double-Icon{
+  font-size:200%;
+  margin-right: 20px;
+}
+
+.pac-container, .pac-item {
+    padding:10px;
+}
+
+.item-accordion.item-complex{
+  padding-left:20px;
+}
+.item-accordion.item-complex{
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+.item-accordion.subMenuBG{
+  background-color:#EFEFEF;
+}
+
+.subMenuBG a.item-content{
+  background-color:#EFEFEF;
+}
+
+.thumbnailImg{
+display: inline-block;
+  max-width: 100%;  
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all .2s ease-in-out;
+       -o-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+  
+}
+.activeDay {background-color:#3a87ad !important;}
+.selectLocationDiv{
+    margin-left:5px;
+    text-overflow: ellipsis;
+    width: 278px;
+    overflow: hidden;
+  }
+
+  i.iMargin{
+    margin-left:5px;margin-right:5px;
+   }
+body .fc{
+  background-color:#FFFFFF;
+}
+
+body .fc-view-container{    
+    background-color: #F1E8D0;
+}
+.fc-bg table tbody tr td{
+  background-color:#549FD6;
+}
+.fc-ltr .fc-basic-view .fc-day-number{
+  color:white;
+}
+
+.fc-toolbar .fc-state-active, .fc-toolbar .ui-state-active{
+  background-color:#FAF4E6;
+}
+.fc-state-default{
+  background-color:#D3C7A6;
+}
+
+.fc-unthemed .fc-today{
+  background-color:#549FD6;
+}
+
+.fc th, .fc td{
+  background-color: white;
+    padding: 0px 0px;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+}
+.fc-event{
+  background-color:#BDD84D;
+  text-align:center;
+  color:#595A55;
+  font-size:16px;
+  margin: 0px;
+    font-weight: bold;
+    border-radius: 0px;
+}
+
+
+.fc-right .fc-agendaDay-button, .fc-right .fc-agendaWeek-button, .fc-right .fc-month-button{
+  max-width: 100px;
+    min-height: 1.4rem;
+    line-height: 1.4rem;
+    font-size: 1rem;
+    text-transform:capitalize;
+}
+
+.fc-button:first-of-type{
+  border-radius: 4px 0 0 4px;
+    margin-right: -14px;
+
+}
+.fc-button:nth-child(2){
+  border-radius: 0px;
+}
+.fc-button:last-of-type{
+  border-left-width: 0;
+    border-radius: 0 4px 4px 0;
+    margin-left: 0;
+}
+
+.fc-right .fc-agendaDay-button, .fc-right .fc-agendaWeek-button, .fc-right .fc-month-button{
+  width:80px;
+  z-index:5;
+}
+
+/** Android styles **/
+
+
+
+
+.platform-android4.platform-android4_4 .fc-toolbar .fc-left h2{
+  font-size:20px;
+  width:200px;
+  
+}
+.platform-android.platform-android4.platform-android4_4 .fc-toolbar .fc-left{
+  position:relative;
+  left:14%;
+}
+.platform-android4.platform-android4_4 .fc-right{
+  padding-top: 10px;
+  margin-right: 20px;
+}
+.platform-android4.platform-android4_4 .fc-right .fc-button-group{
+  position:absolute;
+  left:0px;
+}
+
+.platform-android4.platform-android4_4 .fc .fc-button-group > :first-child{
+  position: relative;
+  top: -33px;
+  left: 9px;
+}
+.platform-android4.platform-android4_4 .fc .fc-button-group > :last-child{
+  position: relative;
+  right: -230px;
+  top: -33px;
+}
+
+.platform-android4.platform-android4_4 .fc-state-default{
+  background-color: #e6e6e6;
+  border:none;
+}
+
+body.platform-android4.platform-android4_4 .placeholder-icon:first-child
+{
+  margin-right:10px;
+}
+
+body.platform-android4.platform-android4_4 .morePadding{
+  padding-left:7px;
+  margin-right:14px;
+}
+
+body.platform-android4.platform-android4_4 .customInput{
+  margin-left:2px;
+}
+
+
+
+
+.platform-ios.platform-ios8 .fc-toolbar .fc-left h2{
+  font-size:20px;
+  
+}
+.platform-ios.platform-ios8 .fc-toolbar .fc-left{
+  position:relative;
+  left:30%;
+}
+.platform-ios.platform-ios8 .fc-right{
+  padding-top: 10px;
+    margin-right: 60px;
+}
+.platform-ios.platform-ios8 .fc-right .fc-button-group{
+  position:absolute;
+  left:0px;
+}
+
+.platform-ios.platform-ios8 .fc .fc-button-group > :first-child{
+  position:relative;
+  top:-31px;
+}
+.platform-ios.platform-ios8 .fc .fc-button-group > :last-child{
+  position:relative;
+  right:-292px;
+  top:-31px;
+}
+
+.platform-ios.platform-ios7 .fc-toolbar .fc-left h2{
+  font-size:15px;
+  font-weight:normal;
+  margin-top:5px;
+  
+}
+.platform-ios.platform-ios7 .fc-toolbar .fc-left{
+  position:relative;
+  left:30%;
+}
+.platform-ios.platform-ios7 .fc-right{
+  padding-top: 7px;
+    margin-right: 35px;
+}
+.platform-ios.platform-ios7 .fc-right .fc-button-group{
+  position:absolute;
+  left:0px;
+}
+
+.platform-ios.platform-ios7 .fc .fc-button-group > :first-child{
+  position:relative;
+  top:-31px;
+}
+.platform-ios.platform-ios7 .fc .fc-button-group > :last-child{
+  position:relative;
+  right:-238px;
+  top:-31px;
+}
+
+.lt {
+    font-size: 25px !important;
+    color: #CCCCCC !important;
+}
+
+.bidinp {
+    width: 40px !important;
+    text-align: center !important;
+    border: none !important;
+    font-size: 20px !important;
+    vertical-align: initial !important;
+    display: initial !important;
+}
+.specialDiv:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "\2212";
+    /* content: "\274c"; use the hex value here... */
+    font-size: 100px;
+    color: red;
+    line-height: 80px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: -1;
+}
+
+input.bgcolor {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+#updateSellItemsPage .moreButtonMarginbottom10{
+  margin-bottom:10px;
+}
+
+.marginTop50Percent{
+  padding-top:50%;
+}
+.marginTop{
+  margin-top:10px;
+}
+
+#normalMenu .item {
+    padding: 5px;
+}
+
+#normalMenu .specialMenuItem{
+  padding-top:0px;
+  padding-bottom:0px;
+}
+.custom-ion-option-33 {
+    height: 33% !important;
+    float: right;
+    box-sizing: initial;
+    width:26%;
+    height: 33% !important;
+    float: right;
+    box-sizing: initial;
+    min-width:76px !important;
+}
+
+.completed{
+  color:#33cd5f;
+  font-size:20px
+}
+.declined{
+  color:red;
+  font-size:20px
+}
+
+#viewInventory .list .row{
+  padding:0px;
+}
+
+.fixed-outside {
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    color: white;
+    height: 120px;
+    text-align: center;
+}
+
+.button-circle {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+
+}
+.fixed-outside {
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    color: white;
+    height: 120px;
+    text-align: center;
+}
+
+.button-circle {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+}
+
+
+.platform-android.platform-android4.platform-android4_4 .custom-ion-option-33{
+  width:27%;
+}
+.platform-android.platform-android4.platform-android4_4 .item-options{
+  width:53%;
+}
+
+.platform-ios.platform-ios9.platform-ios9_1 .custom-ion-option-33{
+  width:33%;
+}
+
+.platform-ios.platform-ios9.platform-ios9_1 .item-options{
+  width:51%;
+}
+
+/*****************************
+New UI Styles
+****************************/
+.bar-balanced-new{
+  background-color:#BDD84D !important;
+  color:#010103 !important;
+  border:none;
+}
+
+.bar.bar-balanced .title{
+  color:black;
+}
+
+.removeBorders{
+  border-top:0px;
+  border-left:0px;
+  border-right:0px;
+}
+.login_bg{
+      background-image: url('../assets/images/defaultsitebg.jpg');
+    background-size: 100% auto;
+    background-position: 0 bottom;
+    background-repeat: no-repeat;
+}
+.tabRowNew{
+  margin-top:47px;position:fixed;z-index:999;
+}
+.m-t-15{
+  margin-top:15px;
+}
+.pendingNewStyle{
+  color:black;background-color:#BDD84D;padding:10px 20px;
+}
+.completedNewStyle{
+  padding:10px 20px;border:1px solid gray;
+}
+.button.activated{
+  background-color:white;
+  border:none;
+  box-shadow:none;
+
+}
+.m-tb-50{
+  margin-top:50px;
+  margin-bottom:50px;
+}
+.m-t-50{
+ margin-top:50px; 
+}
+.bar-balanced-new{
+  background-color:#BDD84D !important;
+  color:#010103 !important;
+  border-bottom:none !important;
+}
+.site-bg-color-new{
+  background-color:#858585;
+}
+span.f-s-14-c-w{
+  font-size:14px;color:white;
+}
+.paddingZeroNew{
+  margin-bottom:15px;box-shadow: 0px 5px 5px #888888;
+}
+.img-rel-t-10{
+  position:relative;top:6px;
+}
+.bg-color-w-hp{
+  background-color:#BDD84D;width:100%;
+}
+.col-new-ui{
+  border-right:1px solid #DDDDDD;padding-top:20px;padding-bottom:20px;
+}
+.m-b-10{
+  margin-bottom:10px;
+}
+
+.f-s-10{
+  font-size:10px;
+}
+.f-w-b-f-s-12{
+  font-weight:bold;font-size:12px;
+  white-space:initial
+}
+.p-tb-20{
+  padding-top:20px;
+  padding-bottom:20px;
+}
+.w-50-p{
+  width:50%;
+}
+.col-key {
+    padding: 0% 1% 7% 6.5%;
+    float: left; 
+
+
+}
+.m-t-10-b-0{
+  margin-top:10px !important;
+  margin-bottom:0px;
+}
+
+.bar-balanced-new-circle{
+    border-color: #FFFFFF !important;
+    background-color: #BDD84D !important;
+    color: #fff;
+}
+.va-swipe-icon{
+  position:absolute;font-size:20px;top:50%;right:10px;color:gray;
+}
+.rd-col-bg-gray{
+  background-color:#858585;
+}
+.rd-bg-bs{
+  background-color:#F6F6F6;box-shadow: 0px 3px 7px #888888;
+}
+
+.rd-pl-ml-mt{
+  padding-left:0px;margin-left:0px;margin-top:5px;
+}
+.rd-mb-pb-0{
+  margin-bottom:0px;padding-bottom:0px;
+}
+.rd-fs-10{
+  font-size:10px;
+  color:#969696;
+  margin-bottom:5px; 
+}
+.rd-pt-mt{
+  padding-top:0px;margin-top:-5px;
+}
+.rd-pt-mt-0{
+  padding-top:0px;margin-top:0px;
+}
+.rd-fs-fw{
+  font-size:13px;font-weight:bold;
+}
+.rd-m-t-10{
+  margin-top:10px !important;
+}
+.rd-bor-bot{
+  border-bottom:1px solid #DDDDDD;
+}
+.rd-fs-fw-head{
+  font-size:12px;font-weight:bold;
+}
+.rd-p-t-0{
+  padding-top:0px;
+}
+.rd-first-box{
+  background-color:#EFEFEF;border-right:1px solid #F5F5F5;
+}
+.rd-second-box{
+  background-color:#EFEFEF;border-left:1px solid #FCFCFC;
+}
+.rd-circle{
+  text-align:center;padding-top:10px;margin:0 auto;width:60px;height:60px;border-radius:30px;background-color:white;margin-top:14%;
+}
+.rd-bor-bot-item{
+  border-bottom:1px solid #EFEFEF;
+}
+.rd-fs{
+  font-size:10px;
+  color:#969696;
+  margin-bottom:5px; 
+}
+
+#agentAppointments .item-complex .item-content, .item-radio .item-content
+{
+  padding:0px;
+}
+.about-content-scroll{
+  height:90%;margin-bottom:10px;text-align:justify;
+}
+
+
+
+.ma-first-box{
+  background-color:#EFEFEF;border-right:1px solid #FEFEFE
+}
+.ma-second-box{
+  background-color:#EFEFEF;
+}
+
+.ma-pos-rel{
+  position:relative;
+}
+.ma-circle{
+  margin:0 auto;width:100px;height:100px;border-radius:50px;background-color:white;
+}
+.ma-m-t-10{
+  margin-top:10px;
+}
+.ma-img-m-l{
+  margin-left:-10px;
+}
+.ma-m-b-2{
+  margin-bottom:2px;
+}
+.width100{
+  width:100%;
+}
+.ma-fs-14{
+  font-size:14px;
+}
+.adrs-row{
+  background-color:#EFEFEF;
+      padding-top: 10px;
+    padding-bottom: 10px;
+}
+.adrs-title{
+  color:#888888;font-size:12px;font-weight:bold;
+}
+.adrs-text{
+  font-size:11px;font-weight:bold;line-height:1.2;
+}
+.cat-name{
+  margin-bottom:5px;font-size:12px;color:black;
+}
+.cat-sub-unit{
+  margin-top:-5px;font-size:10px;
+}
+.cat-sub-unit-value{
+  color:black;
+}
+.cat-remove{
+  font-size:20px;padding-right:5px;color:red;
+}
+#agentAppointments .item-options {
+    width: 100px;
+}
+.lt-minus{
+  border-top-left-radius:5px;border-bottom-left-radius:5px;padding-left:12px;padding-right:12px;padding-top:0px;padding-bottom:0px;background-color:#E6E6E6;
+}
+.lt-plus{
+  border-top-right-radius:5px;border-bottom-right-radius:5px;padding-left:8px;padding-right:10px;padding-top:0px;padding-bottom:0px;background-color:#E6E6E6;
+}
+.lt-value{
+  margin-left: -4px;margin-right: -4px;position: relative;top: -4px;font-size:14px !important;border-top: 1px solid #E6E6E6 !important;border-bottom: 1px solid #E6E6E6 !important;
+}
+.fc-content{
+  background-image: url('../assets/svg/kabadi.svg') !important;
+    background-size: 82px !important;
+    height: 61px !important;
+    background-position-x: 62px !important;
+    background-position-y: 9px !important;
+    background-repeat-y: no-repeat !important;
+}
+.rd-bor-bot{
+  border-bottom: 1px solid #DDD;
+}

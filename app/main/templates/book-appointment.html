@@ -1,0 +1,53 @@
+<ion-view view-title="Sell Request" hide-nav-bar="false" align-title="left" hide-back-button="true" cache-view="false" id="updateSellItemsPage">
+    <ion-content has-bouncing="false" padding="true" class="has-header">
+        <div class="list">
+            <div class="item item-input item-select">
+                <div class="col">Address</div>
+                <select ng-options="location.addressId as location.formattedAddress for location in locations" ng-model="data.agentAddressId">
+                </select>
+            </div>
+            <div class="item row">
+                <div class="col col-33">Category</div>
+                <!-- <div class="col col-25">Price</div> -->
+                <div class="col col-33">Qty(Kg)</div>
+                <div class="col col-20">Amt(Rs)</div>
+            </div>
+            <div ng-repeat="category in data.items">
+                <div class="item row">
+                    <div class="col col-33 col-center">
+                        <div style="margin-bottom:5px;font-size:14px;">{{category.name}} </div>
+                        <div style="font-size:13px;">Rate/Kg: {{category.pricePerUnit}} Rs</div>
+                    </div>
+                    <div class="col col-33"><span class="lt" on-tap="decreaseQty($index)">&lt;</span>
+                        <input class="bidinp" ng-model="data.items[$index].quantity" type="tel" ng-class="{'bgcolor' : toggle.state}" ng-disabled="toggle.state" />
+                        <span class="lt" on-tap="increaseQty($index)">&gt;</span>
+                    </div>
+                    <div class="col col-20 textRight">{{category.amount| number : 2}}</div>
+                    <div class="col col-10">
+                        <div>
+                            <i class="icon ion-ios-close-outline" ng-click="removeSellItem($index)" style="font-size:20px;padding-right:5px;color:red;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item row">
+                <div class="col col-33 textRight"></div>
+                <div class="col col-33 textRight">Total Amount</div>
+                <div class="col col-20 textRight">
+                    {{getTotoal() | number : 2}}
+                </div>
+            </div>
+            <div class="item row" style="margin-bottom: 52px;">
+                <div class="col col-75"></div>
+                <div class="col col-25">
+                    <button class="button button-small button-positive" ng-click="openSellItemsModal()">Add Items</button>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <div class="tabs dashboardTabsStyle">
+        <button ng-click="updateSellItems()" class="button button-stable button-clear tab-item item-text-wrap" style="font-size:16px;color:white;opacity:1;">
+            Update Scrap
+        </button>
+    </div>
+</ion-view>

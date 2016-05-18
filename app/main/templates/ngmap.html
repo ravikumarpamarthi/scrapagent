@@ -1,0 +1,54 @@
+<ion-view  view-title="Select Location" hide-nav-bar="false" align-title="left" hide-back-button="true" cache-view="false">
+    <ion-content has-bouncing="false">
+        <div ng-if="errorMessage" class="errorDiv">Please select Location</div>
+        <ion-list>
+            <div class="padding">
+                <label class="item item-input" style="white-space:normal;">
+                    <input places-auto-complete id="autocomplete" ng-model="vm.formattedAddress" type="text" on-place-changed="placeChanged()" ng-focus="disableTap('autocomplete')" />
+                </label>
+            </div>
+        </ion-list>
+        <!-- content goes here -->
+        <div class="padding map-parent">
+            <ng-map map-type-control=false zoom="14" center="{{center}}" style="height:250px;" zoom-control=false street-view-control=false>
+                <marker draggable="true" position="{{center}}" on-dragend="markerDragEnd(event)" icon="main/assets/images/consumer.svg"></marker>
+            </ng-map>
+            <div class="map-child-target" ng-click="setCurrentLocation()"><i class="icon ion-android-locate placeholder-icon custom-target-icon"></i></div>
+        </div>
+        <ion-list>
+            <div class="row paddingZero">
+                <div class="col col-50">
+                    <div class="button-bar" ng-click="takePicture()">
+                        <a class="button button-small">Take Photo</a>
+                    </div>
+                </div>
+                <div class="col col-50">
+                    <div class="button-bar" ng-click="selectPicture()">
+                        <a class="button button-small">Select Photo</a>
+                    </div>
+                </div>
+            </div>
+            <!-- <div ng-show="picData" class="item item-image">
+                <img id="myImage" class="item" ng-src="{{picData}}" width="100%" height="100%" />
+            </div>
+            <div ng-show="!picData && shopImage" class="item item-image">
+                <img class="item" ng-src="{{$root.getImageFileById}}/{{shopImage}}.jpg" width="100%" height="100%" />
+            </div> -->
+        </ion-list>
+        <div class="row text-center paddingZero" ng-show="picData">
+            <div class="col "><img  class="thumbnailImg" id="myImage" ng-src="{{picData}}" width="100" height="100" /></div>
+        </div>
+        <div class="row text-center paddingZero" ng-show="!picData && shopImage">
+            <div class="col "><img  class="thumbnailImg" ng-src="{{$root.getImageFileById}}/{{shopImage}}.jpg" width="100" height="100" /></div>
+        </div>
+        <div class="row paddingZero">
+            <div class="col col-50">
+                <button class="button button-block button-small button-balanced " ng-disabled="!vm.formattedAddress" ng-click="addLocation()">
+                    <i class="icon ion-ios-location-outline"></i>&nbsp;&nbsp; {{(addressId)?'Update location':'Add Location'}}</button>
+            </div>
+            <div class="col col-50">
+                <button type="submit" class="button button-block button-small button-energized" ng-click="go('main.myaccount')">Cancel</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

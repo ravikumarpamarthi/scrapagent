@@ -1,0 +1,72 @@
+<ion-modal-view cache-view="false" >
+    <ion-header-bar class="bar-balanced bar-balanced-new"  align-title="center">
+        <i class="col-center icon ion-arrow-left-c" style="font-size:25px;font-weight:bold;" ng-click="closeModal()"></i>
+        <h1 class="title">Add Categories</h1>
+    </ion-header-bar>
+    <ion-content has-bouncing="false" style="margin-bottom:50px;">
+        <div ng-repeat="category in categories" style="margin-top:-10px;">
+            <div class="row" ng-if="$even">
+                <div  class="col col-50 custom1 " ng-class="{shade:inShades($index+1)}">
+                    <div class="textCenter colorGray">
+                        <span ng-bind="categories[$index].name"></span>
+                        <br/> <span>Rate/{{categories[$index].uom}} : {{categories[$index].price}}Rs</span>
+                    </div>
+                    <label ng-class="{shade:inShades($index+1)}" class="dashboard checkbox-balanced item item-checkbox checkboxStyle">
+                        <div class="checkbox checkbox-input-hidden disable-pointer-events checkbox-circle">
+                            <input type="checkbox" data-checklist-model="modaldata[$index].items" data-checklist-value="categories[$index]">
+                            <i class="checkbox-icon"></i>
+                        </div>
+                        <div class="item-content disable-pointer-events">
+                            <img ng-cache ng-src="{{$root.getImageFileById}}/{{categories[$index].image}}.jpg" width="100" height="70" />
+                        </div>
+                    </label>
+                    <div ng-init="modaldata[$index].qty=1" class="textCenter">Qty&nbsp;&nbsp;
+                        <span class="lt" on-tap="modaldecreaseQty($index)">&lt;</span>
+                        <input ng-class="{shade:inShades($index+1)}" class="bidinp" ng-model="modaldata[$index].qty" type="tel" />
+                        <span class="lt" on-tap="modalincreaseQty($index)">&gt;</span>
+                    </div>
+                </div>
+                <div  class="col col-50 custom1 " ng-if="categories[$index+1]" ng-class="{shade:inShades($index)}">
+                    <div class="textCenter colorGray">
+                        <span ng-bind="categories[$index+1].name"></span>
+                        <br/><span>Rate/{{categories[$index+1].uom}} : {{categories[$index+1].price}}Rs</span>
+                    </div>
+                    <label ng-class="{shade:inShades($index)}" class="checkbox-balanced item dashboard item-checkbox checkboxStyle">
+                        <div class="checkbox checkbox-input-hidden disable-pointer-events checkbox-circle">
+                            <input type="checkbox" data-checklist-model="modaldata[$index+1].items" data-checklist-value="categories[$index+1]">
+                            <i class="checkbox-icon"></i>
+                        </div>
+                        <div class="item-content disable-pointer-events">
+                            <img ng-cache ng-src="{{$root.getImageFileById}}/{{categories[$index+1].image}}.jpg" width="100" height="70" />
+                        </div>
+                    </label>
+                    <div ng-init="modaldata[$index+1].qty=1" class="textCenter">Qty&nbsp;&nbsp;
+                        <span class="lt" on-tap="modaldecreaseQty($index+1)">&lt;</span>
+                        <input ng-class="{shade:inShades($index)}" class="bidinp" ng-model="modaldata[$index+1].qty" type="tel" />
+                        <span class="lt" on-tap="modalincreaseQty($index+1)">&gt;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="tabs dashboardTabsStyle ">
+            <a class="tab-item" ng-click="addItems()" style="font-size:16px;">
+            Add Items
+        </a>
+        </div> -->
+        
+       
+    </ion-content>
+    <div class="tabs dashboardTabsStyle">
+            <button class="button button-stable button-clear tab-item item-text-wrap" type="submit" ng-click="addItems
+()" style="font-size:16px;color:white;opacity:1;">
+                Add Items
+            </button>
+        </div>
+     <!-- <div style="position: absolute; bottom: 0px; width: 100%">
+            <div style="text-align: center">
+                <div >
+                    <button class="button button-full button-balanced" ng-click="addItems()" style="margin-bottom: 0px;">Add Items</button>
+                </div>
+            </div>
+        </div> -->
+</ion-modal-view>

@@ -1,0 +1,183 @@
+<div class="modal">
+    <ion-header-bar class="bar-balanced bar-balanced-new" align-title="center">
+        <h1 class="title">Request Details</h1>
+        <div class="buttons">
+            <button class="button ion-close-circled button-clear" ng-click="appointmentCloseModal()"></button>
+        </div>
+    </ion-header-bar>
+    <ion-content has-bouncing="false">
+        <div class="row paddingZero">
+            <div class="col col-50 site-bg-color-new" style="margin-top:-10px;">
+                <img class="img-rel-t-10" src="main/assets/svg/calender.svg" width="35px" height="30px" /><span class="f-s-14-c-w">{{sellDetails.preferredDate}}</span>
+            </div>
+            <div class="col col-50 rd-col-bg-gray" style="margin-top:-10px;">
+                <img class="img-rel-t-10" src="main/assets/svg/time1.svg" width="35px" height="30px" /><span class="f-s-14-c-w">{{sellDetails.preferredSlot}}</span>
+            </div>
+        </div>
+        <div class="row paddingZero row-center rd-bg-bs">
+            <div class="col col-50 paddingZero">
+                <div class="row row-center">
+                    <div class="col col-10 rd-pl-ml-mt">
+                        <img src="main/assets/svg/confirmation-id1.svg" width="45px" height="40px" />
+                    </div>
+                    <div class="col col-90 text-center">
+                        <div class="row rd-mb-pb-0">
+                            <div class="col col-100 rd-mb-pb-0"><span class="rd-fs-10">CONFIRMATION</span>
+                            </div>
+                        </div>
+                        <div class="row rd-pt-mt">
+                            <div class="col col-100 rd-pt-mt-0"><span class="rd-fs-fw">{{sellDetails.confirmationId}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-50 paddingZero">
+                <div class="row row-center">
+                    <div class="col col-10 rd-pl-ml-mt">
+                        <img src="main/assets/svg/confirm1.svg" width="45px" height="40px" />
+                    </div>
+                    <div class="col col-90 text-center">
+                        <div class="row rd-mb-pb-0">
+                            <div class="col col-100 rd-mb-pb-0"><span class="rd-fs-10">STATUS</span>
+                            </div>
+                        </div>
+                        <div class="row rd-pt-mt">
+                            <div class="col col-100 rd-pt-mt-0"><span class="rd-fs-fw">{{sellDetails.status}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row padding ">
+            <div class="col rd-bor-bot marginTop">
+                <span class="rd-fs-fw-head con-det">CONSUMER DETAILS</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-50 paddingZero">
+                <div class="row rd-p-t-0">
+                    <div class="col">
+                        <h5 class="rd-fs-10">NAME</h5>
+                        <span>{{sellDetails.consumerName}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h5 class="rd-fs-10">MOBILE</h5>
+                        <span>{{sellDetails.consumerMobileNo}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-50">
+                <h5 class="rd-fs-10">ADDRESS</h5>
+                <span>{{sellDetails.consumerAddress.formattedAddress}}</span>
+            </div>
+        </div>
+        <div class="row padding rd-m-t-10" ng-if="sellDetails.items.length>0">
+            <div class="col text-left">
+                <span class="rd-fs-fw-head">ITEM DETAILS</span>
+            </div>
+        </div>
+        <div ng-repeat="item in sellDetails.items" class="row rd-bor-bot-item">
+            <div class="col col-33 rd-first-box">
+                <div class="row row-center">
+                    <div class="col col-center">
+                        <div class="rd-circle">
+                            <img width="45px" height="40px" ng-cache ng-src="{{$root.getImageFileById}}/{{item.image}}.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-67 rd-second-box paddingZero">
+                <div class="row paddingZero">
+                    <div class="col col-50 text-center">
+                        <h5 class="rd-fs-10">CATEGORY NAME</h5>
+                        <span>{{item.categoryName}}</span>
+                    </div>
+                    <div class="col col-50 text-center">
+                        <h5 class="rd-fs-10">PRICE PER UNIT</h5>
+                        <span>{{item.pricePerUnit}}</span>
+                    </div>
+                </div>
+                <div class="row paddingZero">
+                    <div class="col col-50 text-center">
+                        <h5 class="rd-fs-10">QUANTITY</h5>
+                        <span>{{item.quantity}}</span>
+                    </div>
+                    <div class="col col-50 text-center">
+                        <h5 class="rd-fs-10">AMOUNT</h5>
+                        <span>{{item.amount}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 
+         <h4 style="margin-bottom:0px;background-color:#F3F3F3;padding:5px;color:black;">Request Details:</h4>
+        <div class="row">
+            <span class="col siteColor appointmentDate">{{sell.requestedOn}}</span>
+        </div>
+        <div class="row">
+            <div class="col col-50"><span>Confirmation Id<span class="flRight">:</span></span>
+            </div>
+            <div class="col paddingTop"><span>{{sellDetails.confirmationId}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-50"><span>Date<span class="flRight">:</span></span>
+            </div>
+            <div class="col paddingTop"><span>{{sellDetails.preferredDate}}-{{sellDetails.preferredSlot}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-50"><span>Sell Type<span class="flRight">:</span></span>
+            </div>
+            <div class="col paddingTop"><span>{{sellDetails.type}}({{sellDetails.subType}})</span>
+            </div>
+        </div>
+        <div class="row" ng-if="sellDetails.totalAmount>0">
+            <div class="col col-50"><span>Total Amount<span class="flRight">:</span>
+            </div>
+            <div class="col col-50"><span>{{sellDetails.totalAmount}}</span>
+            </div>
+        </div>
+        <h4 style="margin-bottom:0px;background-color:#F3F3F3;padding:5px;color:black;">Consumer Details:</h4>
+        <div class="row padding" style="padding-top:0px;padding-bottom:0px;">
+            <div class="col first-row-first-col">Name<span class="flRight">:</span></div>
+            <div class="col first-row-second-col">{{sellDetails.consumerName}}
+            </div>
+        </div>
+        <div class="row padding" style="padding-bottom:0px;">
+            <div class="col second-row-first-col">Mobile<span class="flRight">:</span></div>
+            <div class="col second-row-second-col">{{sellDetails.consumerMobileNo}}</div>
+        </div>
+        <div class="row padding" style="padding-bottom:0px;">
+            <div class="col second-row-first-col">Address<span class="flRight">:</span></div>
+            <div class="col second-row-second-col">{{sellDetails.consumerAddress.formattedAddress}}</div>
+        </div>
+        
+        <h4 style="margin-bottom:0px;background-color:#F3F3F3;padding:5px;color:black;">Item Details:</h4>
+        <div style="padding-bottom:0px;">
+            <div ng-repeat="item in sellDetails.items">
+                <div class="row padding" style="padding-top:0px;padding-bottom:0px;margin-bottom:6px;">
+                    <div class="col second-row-first-col">Category Name:</div>
+                    <div class="col second-row-second-col">{{item.categoryName}}</div>
+                </div>
+                <div class="row padding" style="padding-top:0px;padding-bottom:0px;margin-bottom:6px;">
+                    <div class="col second-row-first-col">Price Per Unit:</div>
+                    <div class="col second-row-second-col">{{item.pricePerUnit}}</div>
+                </div>
+                <div class="row padding" style="padding-top:0px;padding-bottom:0px;margin-bottom:6px;">
+                    <div class="col second-row-first-col">Quantity:</div>
+                    <div class="col second-row-second-col">{{item.quantity}}</div>
+                </div>
+                <div class="row padding" style="padding-top:0px;padding-bottom:0px;margin-bottom:6px;" ng-if="item.amount>0">
+                    <div class="col second-row-first-col">Amount:</div>
+                    <div class="col second-row-second-col">{{item.amount}}</div>
+                </div>
+                <hr/>
+            </div>
+        </div> -->
+    </ion-content>
+</div>

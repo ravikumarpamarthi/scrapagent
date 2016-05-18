@@ -1,0 +1,124 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-balanced bar-balanced-new" align-title="center">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+            <ion-nav-buttons side="right">
+                <!-- <img class="title-image" src="main/assets/images/scrapq-logo.png" /> -->
+                <!-- <button  class="button button-icon button-clear ion-ios-telephone-outline" onclick="document.location.href ='tel:+919030727277'"></button> -->
+                <img src="main/assets/svg/phone.svg" width="35px" height="30px" onclick="document.location.href ='tel:+919030727277'"/>
+            </ion-nav-buttons>
+            <ion-nav-title class="hidden">
+                <span><img class="title-image" src="main/assets/images/scrapq-logo.png" /><sup>Agent</sup></span>
+
+            </ion-nav-title>
+            <!-- <ion-nav-buttons side="left">
+                <img class="title-image" src="main/assets/images/scrapq-logo.png" /><small>Agent</small>
+            </ion-nav-buttons> -->
+           <!--  <ion-nav-buttons class="hidden" side="right">
+                <button ng-click="toggleSearchBox()" class="button button-icon ion-email"><span class="badge badge-assertive">5</span></button>
+            </ion-nav-buttons> -->
+            <ion-nav-buttons side="left">
+                <button ng-show="!opened" class="button button-icon button-clear ion-navicon" menu-toggle="left" ng-click="opened=false" style="color:black;">
+                </button>
+                <button ng-show="opened" class="button button-icon button-clear ion-android-arrow-forward" menu-toggle="left" ng-click="opened=true">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="pageContent" cache-view="false">
+        </ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar-balanced bar-balanced-new">
+            <h1 class="title"><span><img class="title-image-nav" src="main/assets/images/scrapq-logo.png"/><sup style="top: -2.5em;font-size:50%;">Agent</sup></span></h1>
+        </ion-header-bar>
+        <ion-content has-bouncing="true" id="menu-content-id">
+            <ion-list>
+                <div ng-repeat="group in groups">
+                    <ion-item ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <i class="icon ion-ios-circle-outline" style="position:relative;top:1px;left:0px;font-size:35px;color:#33CD5F;"></i>
+                        <i class="icon ion-ios-person-outline" style="position:relative;left:-29px;font-size:33px;color:#33CD5F;"></i>
+                        <span style="margin-left:-15px;position:absolute;top:25px;left:81px;">My Account&nbsp;&nbsp;<i class="icon" ng-class="isGroupShown(group) ? 'ion-ios-arrow-down' : 'ion-ios-arrow-right'"></i></span>
+                    </ion-item>
+                    <ion-item class="item-accordion subMenuBG item-complex" ng-show="isGroupShown(group)" style="padding-left: 36px" menu-close ng-click="go('main.myaccount')">
+                        <i class="icon ion-person" style="position:relative;top:1px;font-size:35px;color:#33CD5F;"></i>
+                        <span style="position:relative;top:-7px;left:10px;">Profile</span>
+                    </ion-item>
+                    <ion-item class="item-accordion subMenuBG item-complex" ng-show="isGroupShown(group)" style="padding-left: 36px;" menu-close ng-click="go('main.viewinventory')">
+                        <i class="icon ion-android-search" style="position:relative;top:1px;font-size:35px;color:#33CD5F;"></i>
+                        <span style="position:relative;top:-7px;left:7px;">View Scrap</span>
+                    </ion-item>
+                    
+                </div>
+            </ion-list>
+            <ion-list id="normalMenu">
+                <ion-item menu-close ng-click="go('main.home')">
+                    <div class="row">
+                        <div class="col col-20">
+                            <i class="icon ion-ios-speedometer-outline double-Icon" style="color:#33CD5F;"></i>
+                        </div>
+                        <div class="col col-center">
+                            Dashboard
+                        </div>
+                    </div>
+                </ion-item>
+                <ion-item menu-close ng-click="go('main.bookAppointment')" class="hidden specialMenuItem">
+                    <div class="row">
+                        <div class="col col-20">
+                            <i class="icon ion-ios-circle-outline" style="position:relative;top:1px;font-size:35px;color:#33CD5F;"></i>
+                            <i class="icon ion-ios-person-outline" style="position:relative;left:-29px;font-size:33px;color:#33CD5F;"></i>
+                        </div>
+                        <div class="col col-center">
+                            Book Appointment
+                            <br/><small> (for wholesalesrs)</small>
+                        </div>
+                    </div>
+                </ion-item>
+                <ion-item menu-close ng-click="go('main.appointmentList')">
+                    <div class="row">
+                        <div class="col col-20">
+                            <i class="icon ion-ios-circle-outline" style="position:relative;top:1px;font-size:35px;color:#33CD5F;"></i>
+                            <i class="icon ion-ios-person-outline" style="position:relative;left:-29px;font-size:33px;color:#33CD5F;"></i>
+                        </div>
+                        <div class="col col-center">
+                            View Appointment
+                        </div>
+                    </div>
+                </ion-item>
+                <ion-item menu-close class="hidden" ng-click="go('main.viewbids')">
+                    <div class="row">
+                        <div class="col col-20">
+                            <i class="icon fa fa-legal double-Icon" style="font-size:30px;color:#33CD5F;"></i>
+                        </div>
+                        <div class="col col-center">
+                            Bids
+                        </div>
+                    </div>
+                </ion-item> 
+
+                <ion-item menu-close onclick="document.location.href ='tel:+919030727277'">
+                    <div class="row">
+                        <div class="col col-20">
+                            <i class="icon ion-social-whatsapp-outline" style="font-size:30px;color:#33CD5F;"></i>
+                        </div>
+                        <div class="col col-center">
+                            Contact Call Center
+                        </div>
+                    </div>
+                </ion-item>
+                <ion-item menu-close ng-click="go('main.about')">
+                    <div class="row">
+                        <div class="col col-20"><i class="icon ion-ios-information-outline double-Icon" style="color:#33CD5F;"></i></div>
+                        <div class="col col-center">About ScrapQ</div>
+                    </div>
+                </ion-item>
+                <ion-item ng-if="authentication" menu-close ng-click="go('main.login')">
+                    <div class="row">
+                        <div class="col col-20"><i class="icon ion-log-out double-Icon" style="color:#33CD5F;"></i></div>
+                        <div class="col col-center">Logout</div>
+                    </div>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

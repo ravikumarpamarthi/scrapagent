@@ -1,0 +1,95 @@
+<ion-view view-title="Pending Amount" id="pendingAmountPage" hide-nav-bar="false" align-title="left" hide-back-button="true" cache-view="false">
+    <!-- do you want padding? -->
+    <ion-content >
+        <!-- content goes here -->
+        <div class="row">
+            <div class="col col-center">
+                <h2>Pending Amount</h2></div>
+            <div class="col textRight">
+                <img src="main/assets/images/dollar-bag.jpg" width="90" height="90" />
+                <br>
+                <p class="textCenter marginAdjust">500.00</p>
+            </div>
+        </div>
+        <div class="paddingZero shade" >
+        <ion-list >
+            <ion-item class="paddingZero" style="margin-bottom:10px;">
+                <h3 class="siteColor">1-AUG-2015</h3>
+                <div ng-click="showAppointment(sell.confirmationId)" >
+                    <div class="row">
+                        <div class="col-50"><span>Time<span class="flRight">:&nbsp;</span></span>
+                        </div>
+                        <div class="col paddingZero"><span>10:00 AM{{sell.confirmationId}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-50"><span>Amount<span class="flRight">:&nbsp;</span></span>
+                        </div>
+                        <div class="col paddingZero"><span>Rs. 350.00{{sell.preferredDate}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-50"><span>Payment Type<span class="flRight">:&nbsp;</span></span>
+                        </div>
+                        <div class="col paddingZero"><span>Cash{{sell.preferredSlot}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-50"><span>Payment Amt<span class="flRight">:&nbsp;</span></span>
+                        </div>
+                        <div class="col paddingZero"><span>Rs. 50.00{{sell.type}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-50"><span>Location<span class="flRight">:&nbsp;</span></span>
+                        </div>
+                        <div class="col paddingZero"><span style="font-size:10px;">Flat No. 403, Fair View Plaza, Himayat Nagar{{sell.agentName}}</span>
+                        </div>
+                    </div>
+                   
+                </div>
+                <ion-option-button class="button-energized icon ion-plus-circled" ui-sref="main.edit-sell({id:sell.confirmationId})"></ion-option-button>
+                <ion-option-button class="button-assertive icon ion-trash-a" ng-click="showConfirm(sell)"></ion-option-button>
+            </ion-item>
+            <ion-item class="paddingZero" style="margin-bottom:10px;">
+                <h3 class="siteColor">1-AUG-2015</h3>
+                <div ng-click="showAppointment(sell.confirmationId)" >
+                    <div class="row">
+                        <div class="col-50"><span>Time<span class="flRight">:&nbsp;</span></span>
+                        </div>
+                        <div class="col paddingZero"><span>10:00 AM{{sell.confirmationId}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-50"><span>Amount<span class="flRight">:&nbsp;</span></span>
+                        </div>
+                        <div class="col paddingZero"><span>Rs. 350.00{{sell.preferredDate}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-50"><span>Payment Type<span class="flRight">:&nbsp;</span></span>
+                        </div>
+                        <div class="col paddingZero"><span>Cash{{sell.preferredSlot}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-50"><span>Payment Amt<span class="flRight">:&nbsp;</span></span>
+                        </div>
+                        <div class="col paddingZero"><span>Rs. 50.00{{sell.type}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-50"><span>Location<span class="flRight">:&nbsp;</span></span>
+                        </div>
+                        <div class="col paddingZero"><span style="font-size:10px;">Flat No. 403, Fair View Plaza, Himayat Nagar{{sell.agentName}}</span>
+                        </div>
+                    </div>
+                   
+                </div>
+                <ion-option-button class="button-energized icon ion-plus-circled" ui-sref="main.edit-sell({id:sell.confirmationId})"></ion-option-button>
+                <ion-option-button class="button-assertive icon ion-trash-a" ng-click="showConfirm(sell)"></ion-option-button>
+            </ion-item>
+        </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

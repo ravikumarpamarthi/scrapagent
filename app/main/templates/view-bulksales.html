@@ -1,0 +1,28 @@
+<ion-view hide-nav-bar="false" align-title="left" hide-back-button="true" view-title="Appointments" id="appointmentListPage" cache-view="false">
+    <ion-content class="has-header" has-bouncing="true">
+        <div >
+            <div class="row" ng-if="sells.length==0">
+                <span class="siteColor appointmentDate">No Appointment  Sell Requests</span>
+            </div>
+            <div  ng-repeat="sell in sells" class="padding tabContent" ng-click="showAppointment(sell.confirmationId)">
+                <div class="row">
+                    <div class="col-90">
+                        <span class="siteColor appointmentDate">{{sell.requestedDate}}-{{sell.requestedTime}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-50"><span>Confirmation Id<span class="flRight">:</span></span>
+                    </div>
+                    <div class="col paddingTop"><span>{{sell.confirmationId}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-50"><span>Status<span class="flRight">:</span></span>
+                    </div>
+                    <div class="col col-50"><span>{{sell.status}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

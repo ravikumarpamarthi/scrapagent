@@ -1,0 +1,101 @@
+<div class="modal">
+    <ion-header-bar class="bar-balanced bar-balanced-new" align-title="center">
+        <h1 class="title">Directions</h1>
+        <div class="buttons">
+            <button class="button ion-close-circled button-clear" ng-click="directionsCloseModal()"></button>
+        </div>
+    </ion-header-bar>
+    <ion-content padding="true" class="has-header" has-bouncing="true">
+        <div class="row text-center paddingZero" style="background-color:#858585;color:white;">
+            <div class="col col-50">
+                <div class="col col-100" style="border-right:1px solid #AAAAAA;">
+                    <span style="font-size:10px;">PICKUP DATE</span>
+                </div>
+                <div class="row paddingZero" style="margin-top:-10px;border-right:1px solid #AAAAAA;">
+                    <div class="col col-10 paddingZero">
+                        <img src="main/assets/svg/calender.svg" width="35px" height="30px" />
+                    </div>
+                    <div class="col col-90">
+                        <span style="font-size:18px;">{{sellDetails.preferredDate}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="col col-100">
+                    <span style="font-size:10px;">PICKUP TIME</span>
+                </div>
+                <div class="row paddingZero" style="margin-top:-10px;">
+                    <div class="col col-10 paddingZero">
+                        <img src="main/assets/svg/time1.svg" width="35px" height="30px" />
+                    </div>
+                    <div class="col col-90">
+                        <span style="font-size:18px;">{{sellDetails.preferredSlot}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center" style="margin-top:0px;margin-bottom:0px;">
+            <div class="col col-33" style="border-right:1px solid #DDDDDD;padding-top:10px;padding-bottom:0px;">
+                <div style="margin-bottom:0px;">
+                    <img src="main/assets/svg/confirmation-id1.svg" width="45px" height="40px" />
+                </div>
+                <span style="font-size:10px;">CONFIRMATION</span>
+                <span style="font-weight:bold;font-size:13px;">{{sellDetails.confirmationId}}</span>
+            </div>
+            <div class="col col-33" style="border-right:1px solid #DDDDDD;padding-top:10px;padding-bottom:0px;">
+                <div style="margin-bottom:0px;">
+                    <img src="main/assets/svg/user-agent1.svg" width="45px" height="40px" />
+                </div>
+                <div style="font-size:10px;">CONSUMER NAME</div>
+                <span style="font-weight:bold;font-size:13px;">{{sellDetails.consumerName}}</span>
+            </div>
+            <div class="col col-33" style="padding-top:10px;padding-bottom:0px;">
+                <div style="margin-bottom:0px;">
+                    <img src="main/assets/svg/mobile1.svg" width="45px" height="40px" />
+                </div>
+                <span style="font-size:10px;">CONSUMER MOBILE</span>
+                <span style="font-weight:bold;font-size:13px;">{{sellDetails.consumerMobileNo}}</span> </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col col-50">Confirmation ID:</div>
+            <div class="col" style="border:1px dashed #DBDBDB;">{{sellDetails.confirmationId}}</div>
+        </div>
+        <div class="row">
+            <div class="col col-50">Pickup Location:</div>
+            <div class="col">{{sellDetails.consumerAddress.formattedAddress}}</div>
+        </div> -->
+        <div ng-if="sellDetails.origin">
+            <ng-map zoom="14" map-type-control=false center="{{sellDetails.origin}}" style="height:50%;" zoom-control=false street-view-control=false>
+                <marker draggable="false" position="{{sellDetails.origin}}" on-dragend="markerDragEnd()" icon="main/assets/images/consumer.svg"></marker>
+                <marker draggable="false" position="{{sellDetails.destination}}" on-dragend="markerDragEnd()" icon="main/assets/images/agent.svg"></marker>
+                <directions panel="directions-panel" travel-mode="DRIVING" suppress-markers=true origin="{{sellDetails.origin}}" destination="{{sellDetails.destination}}">
+                </directions>
+            </ng-map>
+        </div>
+        <div class="row">
+            <div class="col col-20 col-center">
+                <img src="main/assets/svg/user-agent1.svg" width="60px" height="60px" />
+            </div>
+            <div class="col col-80">
+                <div style="font-size:10px;">PICKUP LOCATION</div>
+                <div><span style="font-weight:bold;font-size:13px;">{{sellDetails.consumerAddress.formattedAddress}}</span></div>
+            </div>
+        </div>
+        <!-- <div class="row" style="margin-bottom:5px;">
+            <div class="col col-33">Pickup Date:</div>
+            <div class="col" style="border:1px solid #DBDBDB;">{{sellDetails.preferredDate}}</div>
+        </div>
+        <div class="row" style="margin-bottom:5px;">
+            <div class="col col-33">Pickup Time:</div>
+            <div class="col" style="border:1px solid #DBDBDB;">{{sellDetails.preferredSlot}}</div>
+        </div>
+        <div class="row" style="margin-bottom:5px;">
+            <div class="col col-33">Agent Name:</div>
+            <div class="col" style="border:1px solid #DBDBDB;">{{sellDetails.agentName}}</div>
+        </div>
+        <div class="row">
+            <div class="col col-33">Agent Mobile:</div>
+            <div class="col" style="border:1px solid #DBDBDB;">{{sellDetails.agentMobileNo}}</div>
+        </div> -->
+    </ion-content>
+</div>

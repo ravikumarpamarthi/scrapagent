@@ -1,0 +1,50 @@
+<ion-view title="OTP" hide-nav-bar="false" align-title="left" hide-back-button="true" cache-view="false">
+<form name="otpForm" novalidate>
+    <ion-content padding="true" class="has-header " has-bouncing="false">
+        <div class="row row-center">
+            <div class="col col-center">
+                
+                    <div class="errorDiv">
+                        {{errMessage}}
+                    </div>
+                    <ion-list>
+                        <label class="item item-input removeBorders">
+                            <span class="input-label">OTP</span>
+                            <input ng-if="!authorization.otpkey" type="tel" placeholder="Enter OTP" name="otpb" ng-model="data.otp" required>
+                            <div ng-if="authorization.otpkey">
+                                {{data.otp}}
+                                <i ng-if="authorization.otpkey" style="position:absolute;right:5px;color:green;" class="fa fa-check-circle-o"></i>
+                            </div>
+                        </label><br/>
+                        <div ng-if="authorization.otpkey">
+                            <label class="item item-input removeBorders" ng-class="{ 'has-errors' : otpForm.password.$invalid && otpForm.$submitted, 'no-errors' : otpForm.password.$valid  && otpForm.$submitted}">
+                                <img src="main/assets/svg/lock1.svg" width="35px" height="30px"/>
+                                <input type="password" name="password" ng-model="authorization.password" required placeholder="Enter Password">
+                            </label>
+                            <div class="error-container last-error-container" ng-show="otpForm.password.$error && otpForm.$submitted" ng-messages="otpForm.password.$error">
+                                <div ng-messages-include="error-list.html"></div>
+                            </div>
+                            <br/>
+                            <label class="item item-input removeBorders" ng-class="{ 'has-errors' : otpForm.confirmPassword.$invalid && otpForm.$submitted, 'no-errors' : otpForm.confirmPassword.$valid  && otpForm.$submitted}">
+                               <img src="main/assets/svg/lock1.svg" width="35px" height="30px"/>
+                                <input type="password" name="confirmPassword" ng-model="authorization.confirmPassword" placeholder="Enter confirmPassword password" compare-to="authorization.password">
+                            </label>
+                            <div class="error-container last-error-container" ng-show="otpForm.confirmPassword.$error" ng-messages="otpForm.confirmPassword.$error">
+                                <div ng-messages-include="error-list.html"></div>
+                            </div>
+                        </div>
+                    </ion-list>
+                     
+            </div>
+        </div>
+    </ion-content>
+    <div class="tabs dashboardTabsStyle">
+            <button ng-if="!authorization.otpkey" ng-click="verify()" type="submit" class="button button-stable button-clear tab-item item-text-wrap" type="submit" style="font-size:16px;color:white;opacity:1;">
+                Verify
+            </button>
+            <button ng-if="authorization.otpkey" ng-click="submitOtpForm(otpForm)" type="submit" class="button button-stable button-clear tab-item item-text-wrap" type="submit" style="font-size:16px;color:white;opacity:1;">
+                Submit
+            </button>
+        </div>
+         </form>
+</ion-view>

@@ -1,0 +1,185 @@
+<ion-view hide-nav-bar="false" cache-view="false" hide-back-button="true" title="My Appointments" id="agentAppointments">
+    <!-- <ion-view hide-nav-bar="false" align-title="left" hide-back-button="true" view-title="Appointments" id="appointmentListPage" cache-view="false"> -->
+    <div class="hidden row tabRow tabRowNew">
+        <div class="col tabCol">
+            <button ng-init="pending=true;getPendingRequests();" class="button button-block tabButtonStyle" ng-click="completed=false;pending=true;getPendingRequests();scrollTop();"><span ng-class="(pending)?'pendingNewStyle':'completedNewStyle'">PENDING</span>
+            </button>
+        </div>
+        <div class="col tabCol">
+            <button class="button button-block tabButtonStyle" ng-click="completed=true;pending=false;getCompletedRequests();scrollTop();"><span ng-class="(completed)?'pendingNewStyle':'completedNewStyle'">COMPLETED</span>
+            </button>
+        </div>
+    </div>
+    <ion-content class="has-header " has-bouncing="false">
+        <div ng-show="pending" class="">
+            <div class="row" ng-if="pendingSells.length==0">
+                <span class="siteColor appointmentDate">No Pending Sell Requests</span>
+            </div>
+            <div ng-if="pendingSells.length>0" ng-repeat="sell in pendingSells" class="">
+                <ion-list>
+                    <ion-item class="paddingZero paddingZeroNew" style="padding:0 !important;">
+                        <div class="row paddingZero">
+                            <div class="col col-45 text-center paddingZero site-bg-color-new" style="padding-bottom:25px;">
+                                <div style="position:relative;top:20px;left:20px;color:white;font-size:10px;">PICKUP DATE</div>
+                                <img class="img-rel-t-10" src="main/assets/svg/calender.svg" width="35px" height="30px" />
+                                <span class="f-s-14-c-w">{{sell.preferredDate}}</span>
+                            </div>
+                            <div class="col col-45 text-center paddingZero" style="padding-bottom:25px;background-color:#858585;">
+                                <div style="position:relative;top:20px;left:20px;color:white;font-size:10px;">PICKUP TIME</div>
+                                <img class="img-rel-t-10" src="main/assets/svg/time1.svg" width="35px" height="30px" /><span class="f-s-14-c-w">{{sell.preferredSlot}}</span>
+                            </div>
+                            <!-- <div class="col col-20 text-center bg-color-w-hp" ng-if="sell.agentName" class="ion-ios-location-outline  directions" ng-click="showDirections(sell.confirmationId);$event.stopPropagation()">
+                                <img src="main/assets/svg/location.svg" width="45px" height="40px" />
+                            </div> -->
+                        </div>
+                        <div class="row text-center m-t-10-b-0" ng-click="showAppointment(sell.confirmationId)">
+                            <div class="col col-33 col-new-ui">
+                                <div class="m-b-10">
+                                    <img src="main/assets/svg/confirmation-id1.svg" width="45px" height="40px" />
+                                </div>
+                                <span class="f-s-10">CONFIRMATION</span>
+                                <br/>
+                                <span class="f-w-b-f-s-12">{{sell.confirmationId}}</span>
+                            </div>
+                            <div class="col col-33 col-new-ui">
+                                <div class="m-b-10">
+                                    <img src="main/assets/svg/user-agent1.svg" width="45px" height="40px" />
+                                </div>
+                                <span class="f-s-10">CONSUMER NAME</span>
+                                <br/>
+                                <span class="f-w-b-f-s-12">{{sell.consumerName || 'Allocation in progress...'}}</span>
+                            </div>
+                            <div class="col col-33 p-tb-20">
+                                <div class="m-b-10">
+                                    <img src="main/assets/svg/mobile1.svg" width="45px" height="40px" />
+                                </div>
+                                <span class="f-s-10">MOBILE</span>
+                                <br/>
+                                <span class="f-w-b-f-s-12">{{sell.consumerMobileNo}}</span> </div>
+                        </div>
+                        <div class="va-swipe-icon"><i class="icon ion-arrow-swap"></i></div>
+                        <!-- <span class="siteColor" style="font-size:20px;">{{sell.requestedDate}}- {{sell.preferredSlot}} </span>
+                        <div class="row">
+                            <div class="col-90">
+                                <div ng-click="showAppointment(sell.confirmationId)">
+                                    <div class="row">
+                                        <div class="col-50"><span>Confirmation Id<span class="flRight">:</span></span>
+                                        </div>
+                                        <div class="col paddingTop"><span>{{sell.confirmationId}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-50"><span>Sell Type<span class="flRight">:</span></span>
+                                        </div>
+                                        <div class="col paddingTop"><span>{{sell.type}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-50"><span>Consumer Name<span class="flRight">:</span></span>
+                                        </div>
+                                        <div class="col paddingTop"><span>{{sell.consumerName}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-50"><span>Mobile<span class="flRight">:</span></span>
+                                        </div>
+                                        <div class="col col-50"><span>{{sell.consumerMobileNo}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-10 col-center">
+                                <i class="icon ion-arrow-swap"></i>
+                            </div>
+                        </div> -->
+
+                        <!-- <ion-option-button class="custom-ion-option-33 icon ion-ios-refresh-outline calm button-energized" ng-click="rescheduleConfirmation(sell)">
+                        </ion-option-button> -->
+                        <ion-option-button class="custom-ion-option-33 button-positive " style="background-color:#00B4FF;" ng-click="showDirections(sell.confirmationId)">
+                        <div class="row " style="margin-left:-5px;">
+                            <div class="col col-center ">
+                                <div style="float:right;position: absolute;top: 23%;left: 33%;">
+                                    <img src="main/assets/svg/location-w.svg" width="35px" height="30px" /></div>
+                                <div style="clear:both;">
+                                    <div style="font-size:12px;position: absolute;top: 45%;left: 20%;">DIRECTION</div>
+                                </div>
+                            </div>
+                        </div>
+                        </ion-option-button>
+                        <ion-option-button class="custom-ion-option-33 button-balanced" style="background-color:#21AA52;" ng-click="updateSellRequest(sell.confirmationId)">
+                        <div class="row " style="margin-left:-5px;">
+                            <div class="col col-center ">
+                                <div style="float:right;position: absolute;top: 23%;left: 25%;">
+                                    <img src="main/assets/svg/edit-white-1.svg" width="45px" height="40px" /></div>
+                                <div style="clear:both;">
+                                    <div style="font-size:12px;position: absolute;top: 45%;left: 35%;">EDIT</div>
+                                </div>
+                            </div>
+                        </div>
+                        </ion-option-button>
+                        <!-- <ion-option-button ng-click="showConfirm(sell)" class="custom-ion-option-33 button-calm icon ion-social-whatsapp"> -->
+                        </ion-option-button>
+                        <ion-option-button class="custom-ion-option-33 button-assertive" ng-click="declineSellItem(sell,$index)">
+                        <div class="row " style="margin-left:-5px;">
+                            <div class="col col-center ">
+                                <div style="float:right;position: absolute;top: 23%;left: 25%;">
+                                    <img src="main/assets/svg/wrong-w.svg" width="45px" height="40px" /></div>
+                                <div style="clear:both;">
+                                    <div style="font-size:11px;position: absolute;top: 45%;left: 28%;">REMOVE</div>
+                                </div>
+                            </div>
+                        </div>
+                        </ion-option-button>
+                    </ion-item>
+                </ion-list>
+            </div>
+        </div>
+        <div ng-show="completed" class="m-tb-50">
+            <div class="row" ng-if="completedSells.length==0">
+                <span class="siteColor appointmentDate">No Completed Sell Requests</span>
+            </div>
+            <div ng-if="completedSells.length>0" ng-repeat="sell in completedSells" class="padding tabContent" ng-click="showAppointment(sell.confirmationId)">
+                <div class="row">
+                    <div class="col-90">
+                        <span class="siteColor appointmentDate">{{sell.requestedDate}}-{{sell.preferredSlot}}</span>
+                    </div>
+                    <div class="col-10">
+                        <span ng-if="sell.statusCode=='REQUEST_COMPLETED'" class="ion-checkmark completed"></span>
+                        <span ng-if="sell.statusCode=='DECLINED_BY_AGENT' || sell.statusCode=='CANCELLED_BY_CONSUMER'" class="ion-android-close declined"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-50"><span>Confirmation Id<span class="flRight">:</span></span>
+                    </div>
+                    <div class="col paddingTop"><span>{{sell.confirmationId}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-50"><span>Sell Type<span class="flRight">:</span></span>
+                    </div>
+                    <div class="col paddingTop"><span>{{sell.type}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-50"><span>Consumer Name<span class="flRight">:</span></span>
+                    </div>
+                    <div class="col paddingTop"><span>{{sell.consumerName}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-50"><span>Mobile<span class="flRight">:</span></span>
+                    </div>
+                    <div class="col col-50"><span>{{sell.consumerMobileNo}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <div class="fixed-outside">
+        <div class="row">
+            <div class="col text-right">
+                <button ng-click="go('main.home')" class="button button-circle button-balanced bar-balanced-new-circle icon ion-ios-calendar-outline"></button>
+            </div>
+        </div>
+    </div>
+</ion-view>

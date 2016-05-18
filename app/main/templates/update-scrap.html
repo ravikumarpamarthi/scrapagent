@@ -1,0 +1,28 @@
+<ion-view view-title="Scrap Updates" id="updateScrapPage" hide-nav-bar="false" align-title="left" hide-back-button="true" cache-view="false">
+    <!-- do you want padding? -->
+    <ion-content class="ionContentBackground" >
+        <marquee scrollamount="3">
+            <span ng-repeat="category in categories">{{category.name}}- {{category.price}} Rs/{{category.uom}}</span>
+        </marquee>
+        <div class="list padding">
+            <div class="item row paddingZero marginBottom10" ng-repeat="category in categories" >
+                <div class="col col-25 item-thumbnail paddingZero">
+                    <img ng-src="{{category.image}}" width="80" height="80" />
+                </div>
+                <div class="col col-25 col-center">
+                    <div style="margin-bottom:5px;font-size:14px;">{{category.name}} <i class="fa fa-info-circle" style="color:#cccccc;font-size:20px;"></i></div>
+                    <div style="font-size:13px;">Rate/Kg: {{category.price}} Rs</div>
+                </div>
+                <div class="col col-50 col-center paddingZero" style="text-align:right;font-size:13px;">
+                    <div class="spin"><span class="positionStyle">SOH Qty&nbsp;&nbsp;</span><span style="font-size:25px;color:#CCCCCC;">&lt;</span>
+                        <input value="50" style="width:35px;text-align:center;border:none;font-size:20px;" /><span style="font-size:25px;color:#CCCCCC;">&gt;</span></div>
+                    <div class="spin"><span class="positionStyle">Add Qty&nbsp;&nbsp;</span><span style="font-size:25px;color:#CCCCCC;">&lt;</span>
+                        <input value="9.00" style="width:40px;text-align:center;border:none;font-size:20px;" /><span style="font-size:25px;color:#CCCCCC;">&gt;</span></div>
+                </div>
+            </div>
+            <div class="padding">
+                <button class="button button-block button-balanced">Update Scrap</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

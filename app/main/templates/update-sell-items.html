@@ -1,0 +1,70 @@
+<ion-view view-title="SELL REQUEST" hide-nav-bar="false" align-title="left" hide-back-button="true" cache-view="false" id="updateSellItemsPage">
+    <ion-content has-bouncing="true" class="has-header">
+        <div class="row adrs-row">
+            <div class="col">
+                <div class="adrs-title">ADDRESS</div>
+                <div class="adrs-text">{{data.address.formattedAddress}}</div>
+            </div>
+        </div>
+        <div class="list">
+            <div class="item row">
+                <div class="col col-33 text-left adrs-title">CATEGORY</div>                
+                <div class="col col-33 text-center adrs-title">QTY(KG)</div>
+                <div class="col col-33 text-center adrs-title">AMOUNT</div>
+            </div>
+            <div ng-repeat="category in data.items">
+                <div class="item row">
+                    <div class="col col-33 col-center">
+                        <div class="cat-name">{{category.categoryName}} </div>
+                        <div class="cat-sub-unit">RATE/KG: <span class="cat-sub-unit-value">{{category.pricePerUnit}} Rs</span></div>
+                    </div>
+                    <div class="col col-33 col-center">
+                        <span class="lt lt-minus" on-tap="decreaseQty($index)">-</span>
+                        <input class="bidinp lt-value" style="height:29px;padding:0px;" ng-model="data.items[$index].quantity" type="tel" ng-class="{'bgcolor' : toggle.state}" ng-disabled="toggle.state" />
+                        <span class="lt lt-plus" on-tap="increaseQty($index)" >+</span>
+                        <!-- <span class="lt" on-tap="decreaseQty($index)">&lt;</span>
+                        <input class="bidinp" ng-model="data.items[$index].quantity" type="tel" ng-class="{'bgcolor' : toggle.state}" ng-disabled="toggle.state" />
+                        <span class="lt" on-tap="increaseQty($index)">&gt;</span> -->
+                    </div>
+                    <div class="col col-20 col-center textRight" style="font-size:12px;font-weight:bold;">{{category.pricePerUnit * data.items[$index].quantity | number : 2}}</div>
+                    <div class="col col-10 col-center">
+                        <div>
+                            <i class="icon ion-ios-close-outline cat-remove" ng-click="removeSellItem($index)"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-offset-50" style="font-size:1.8em;">Total <span style="font-weight:bold;">{{getTotoal() | number : 2}}</span></div>
+        </div>
+        <!-- <div class="item item-input item-select">
+            <div class="col col-33 textRight"></div>
+            <div class="col col-33 textRight">Payment Mode</div>
+                
+                <div class="col col-20">
+                <select ng-options="paymentMode.value as paymentMode.value for paymentMode in paymentModes" ng-model="data.preferredPaymentMethod">
+                  
+                </select></div>
+              </div> -->
+          
+        <div class="row hidden">
+            <div class="col col-75"></div>
+            <div class="col col-33">
+                <button class="button button-small button-positive" ng-click="openSellItemsModal()">ADD ITEMS</button>
+            </div>
+        </div>
+    </ion-content>
+    <div style="position: absolute;bottom: -5px;right: 0;color: white;height: 120px;width:100%;text-align: center;padding-top:5px;">
+        <div class="row paddingZero" >
+            <div class="col col-100 paddingZero" >
+                 <button style="border:0px;background-color:white;border-top:1px solid #DEDEDE;" class="button button-full button-default" ng-click="openSellItemsModal()">ADD ITEMS</button>
+            </div>
+        </div>
+    </div>
+    <div class="tabs dashboardTabsStyle">
+        <button ng-click="updateSellItems()" class="button button-stable button-clear tab-item item-text-wrap" style="font-size:16px;color:white;opacity:1;">
+            UPDATE SCRAP
+        </button>
+    </div>
+</ion-view>

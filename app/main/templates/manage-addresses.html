@@ -1,0 +1,26 @@
+<ion-view  view-title="Adresses" hide-nav-bar="false" align-title="left" hide-back-button="true" cache-view="false">
+    <!-- do you want padding? -->
+    <ion-content class="padding">
+        <!-- content goes here -->
+        <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
+            
+            <ion-item click-for-options ng-repeat="location in locations" >
+                <div class="padding" style="overflow:hidden;text-overflow:ellipsis;">{{location.formattedAddress}}</div>
+                <ion-option-button class="button-positive" ng-click="confirmDelete(location)">
+                    <i class="icon ion-ios-trash-outline" style="margin-left:7px;"></i>
+                </ion-option-button>
+                <ion-option-button class="button-info" ng-click="edit(location)">
+                    <i class="icon ion-compose" style="margin-left:7px;"></i>
+                    
+                </ion-option-button>
+            </ion-item>
+            
+        </ion-list>
+        <div class="padding">
+                <button type="submit" class="button button-block button-energized" ng-click="go('main.myaccount')">Cancel</button>
+            </div>
+    </ion-content>
+   
+            
+       
+</ion-view>

@@ -1,0 +1,26 @@
+<div class="modal">
+    <ion-header-bar>
+      <h1 class="title">Addresses</h1>
+    </ion-header-bar>
+    <ion-content has-bouncing="false" style="margin-bottom:60px;">
+
+      
+    <ion-list class="address-modal">
+      <div >
+      <ion-item>
+         <ion-radio ng-model="data.defaultLocation"  ng-repeat="location in locations"  ng-value="location">{{location.formattedAddress}} 
+        </ion-radio>
+        <label ng-if="locations.length==0">No Locations found</label>
+      </ion-item>
+      </div>
+      </ion-list>
+      
+    </ion-content>
+    <div style="position: absolute; bottom: 0px; width: 100%">
+        <div style="text-align: center">
+          <div class="padding">
+          <button class="button button-full button-balanced" ng-click="addressesCloseModal()">Done</button></div>
+        </div>
+    </div>
+    
+  </div>
